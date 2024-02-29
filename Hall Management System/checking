@@ -1,0 +1,17 @@
+def is_valid_date(hall_availability_status):
+    parts = hall_availability_status.split('-')
+    if len(parts) == 3:
+        year, month, day = parts
+        print(parts)
+        if (year.isdigit() and month.isdigit() and day.isdigit() and
+            1 <= int(month) <= 12 and 1 <= int(day) <= 31):
+            return True
+    return False
+
+while True:
+    hall_availability_status = input("Enter Hall Availability Status (YYYY-MM-DD): ")
+    if is_valid_date(hall_availability_status) == True:
+        print ("correct date")
+        break
+else:
+    print("Invalid date format. Please use YYYY-MM-DD.")
